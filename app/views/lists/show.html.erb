@@ -14,6 +14,9 @@
       </div>
       <h2 class="card-trip-pricing">x</h2>
     </div>
+    <%= link_to "Delete",
+    bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
  <% end %>
 
