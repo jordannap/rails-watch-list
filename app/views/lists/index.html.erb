@@ -1,16 +1,19 @@
-<div class= "navbar-lewagon">
+<div class="container-index">
 
 <h1>Movie Lists</h1>
 
+<div class = "cardd">
   <% @lists.each do |list| %>
     <div class="card" style="width: 18rem;">
-      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag list.photo.key, height: 200, width: 286, crop: :fill %>
       <div class="card-body">
         <p class="card-text"><%= link_to list.name, list_path(list) %></p>
       </div>
     </div>
   <% end %>
+
 </div>
 
-
 <div class="btn btn-info"><%= link_to("Create a new list", new_list_path) %></div>
+
+</div>
