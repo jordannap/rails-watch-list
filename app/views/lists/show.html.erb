@@ -1,9 +1,11 @@
 <h2><%= @list.name %></h2>
-<% @list.movies.each do |movie| %>
-  <li><%= movie.title %></li>
-  <%= movie.overview %>
-  <%= movie.rating %>
+<% @list.bookmarks.each do |bookmark| %>
+  <li><%= bookmark.movie.title %></li>
+  <%= bookmark.movie.overview %>
+  <%= bookmark.movie.rating %>
+  <%= bookmark.comment %>
   <%= image_tag "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", alt: "film", width: 200 %>
-  <% end %>
 
+ <% end %>
+<%= link_to("Add a movie", new_list_bookmark_path(@list)) %>
 <%= link_to("Back", root_path) %>

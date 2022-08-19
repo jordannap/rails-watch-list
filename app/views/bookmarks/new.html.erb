@@ -1,7 +1,6 @@
-<h1>Create</h1>
-<%= simple_form_for(@bookmark) do |f| %>
+<h1>Add a bookmark</h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
   <%= f.input :comment %>
-  <%= f.input :address %>
-  <%= f.input :rating %>
   <%= f.submit %>
 <% end %>
