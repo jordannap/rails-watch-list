@@ -1,6 +1,6 @@
 <div class= "navbar-lewagon">
 
-<h1>Liste de films</h1>
+<h1>Movie Lists</h1>
 
   <% @lists.each do |list| %>
     <div class="card" style="width: 18rem;">
@@ -13,4 +13,4 @@
 </div>
 
 
-<%= link_to("create new lists", new_list_path) %>
+<div class="btn btn-info"><%= link_to("Create a new list", new_list_path) %></div>

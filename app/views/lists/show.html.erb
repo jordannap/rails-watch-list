@@ -1,11 +1,24 @@
 <h2><%= @list.name %></h2>
-<% @list.bookmarks.each do |bookmark| %>
-  <li><%= bookmark.movie.title %></li>
-  <%= bookmark.movie.overview %>
-  <%= bookmark.movie.rating %>
-  <%= bookmark.comment %>
-  <%= image_tag "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", alt: "film", width: 200 %>
 
+
+<div class="cards">
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="card-trip">
+    <%= image_tag "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", alt: "film", width: 200 %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= bookmark.movie.title %></h2>
+        <p><%= bookmark.movie.overview %></p>
+        <p><%= bookmark.movie.rating %></p>
+        <p><%= bookmark.comment %></p>
+      </div>
+      <h2 class="card-trip-pricing">x</h2>
+    </div>
+  </div>
  <% end %>
-<%= link_to("Add a movie", new_list_bookmark_path(@list)) %>
-<%= link_to("Back", root_path) %>
+
+</div>
+
+
+<div class="btn btn-info"><%= link_to("Add a movie", new_list_bookmark_path(@list)) %></div>
+<div class="btn btn-info"><%= link_to("Back", root_path) %></div>
