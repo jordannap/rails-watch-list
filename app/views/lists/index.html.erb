@@ -1,5 +1,16 @@
-<ul>
+<div class= "navbar-lewagon">
+
+<h1>Liste de films</h1>
+
   <% @lists.each do |list| %>
-    <li><%= list.name %></li>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text"><%= link_to list.name, list_path(list) %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+
+<%= link_to("create new lists", new_list_path) %>
